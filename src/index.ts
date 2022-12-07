@@ -1,5 +1,12 @@
+import "dotenv";
 import server from "./app";
+import { syncDB } from "./db";
+const { PORT } = process.env;
 
-server.listen(3000, async () => {
-  console.log("Listening at port 3000");
+syncDB()
+  .then(() => console.log("Database sync"))
+  .catch((e) => console.log("Error on database syncing" + e));
+
+server.listen(PORT, () => {
+  console.log(`Listening at port ${PORT}`);
 });
