@@ -1,13 +1,13 @@
 import { dbConfig } from "./config";
-import { Test1 } from "../models/Test1";
-import { Test11 } from "../models/Test11";
+import { User } from "../models/User";
+import { Agent } from "../models/Agent";
 
-const test1Model: any = Test1(dbConfig);
-const test2Model: any = Test11(dbConfig);
+const UserModel: any = User(dbConfig);
+const AgentModel: any = Agent(dbConfig);
 
-test1Model.belongsToMany(test2Model, { through: "test1Test11" });
-test2Model.belongsToMany(test1Model, { through: "test1Test11" });
+UserModel.belongsToMany(AgentModel, { through: "User_Agent" });
+AgentModel.hasMany(UserModel);
 
 export const syncDB = () => dbConfig.sync({ force: true });
 
-export { test1Model, test2Model };
+export { UserModel, AgentModel };
