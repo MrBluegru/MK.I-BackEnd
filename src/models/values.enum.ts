@@ -23,3 +23,14 @@ export const STATUS_AGT = {
   WIA: "Wounded in action",
   INACTIVE: "Inactive",
 };
+
+export const STATUS_FUG = {
+  DEAD: "Dead",
+  CAUGHT: "Caught",
+  SEARCHING: "Searching",
+};
+
+export const STATUS_MSSG = {
+  SEARCHING: "Searching",
+  FOUND: "Found",
+};

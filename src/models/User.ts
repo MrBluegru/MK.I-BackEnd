@@ -1,4 +1,4 @@
-import { Sequelize, DataTypes } from "sequelize";
+import { Sequelize, DataTypes, UUIDV4 } from "sequelize";
 import { POSITION, STATUS_ACC } from "./values.enum";
 
 export const User = (sequelize: Sequelize) =>
@@ -7,7 +7,7 @@ export const User = (sequelize: Sequelize) =>
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: UUIDV4,
         primaryKey: true,
       },
       firstName: {

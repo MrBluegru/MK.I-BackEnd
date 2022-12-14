@@ -7,7 +7,7 @@ export const Agent = (sequelize: Sequelize) =>
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: UUIDV4,
         primaryKey: true,
       },
       firstName: {
