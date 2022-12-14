@@ -13,7 +13,7 @@ UserModel.belongsToMany(AgentModel, { through: "User_Agent" });
 AgentModel.hasMany(UserModel);
 UserModel.belongsToMany(FugitiveModel, { through: "User_Fugitive" });
 FugitiveModel.hasMany(UserModel);
-UserModel.belongsToMany(MissingModel, { through: "User_MissingModel" });
+UserModel.belongsToMany(MissingModel, { through: "User_Missing" });
 MissingModel.hasMany(UserModel);
 
 export const syncDB = () => dbConfig.sync({ force: true });
