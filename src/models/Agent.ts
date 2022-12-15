@@ -65,6 +65,7 @@ export const Agent = (sequelize: Sequelize) =>
           STATUS_AGT.WIA,
           STATUS_AGT.INACTIVE,
         ],
+        defaultValue: STATUS_AGT.ACTIVE,
       },
     },
     {

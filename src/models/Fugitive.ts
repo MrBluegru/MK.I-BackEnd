@@ -60,10 +60,10 @@ export const Fugitive = (sequelize: Sequelize) =>
         type: DataTypes.STRING,
       },
       aliases: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.STRING),
       },
       criminalCharges: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.STRING),
       },
       reward: {
         type: DataTypes.STRING,
