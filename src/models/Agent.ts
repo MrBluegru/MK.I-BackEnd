@@ -39,8 +39,7 @@ export const Agent = (sequelize: Sequelize) =>
         allowNull: true,
       },
       sex: {
-        type: DataTypes.ENUM,
-        values: [SEX.FEMALE, SEX.MALE],
+        type: DataTypes.ENUM(SEX.FEMALE, SEX.MALE),
         allowNull: false,
       },
       race: {
@@ -56,15 +55,14 @@ export const Agent = (sequelize: Sequelize) =>
         defaultValue: DataTypes.NOW,
       },
       status: {
-        type: DataTypes.ENUM,
-        values: [
+        type: DataTypes.ENUM(
           STATUS_AGT.ACTIVE,
           STATUS_AGT.MIA,
           STATUS_AGT.KIA,
           STATUS_AGT.POW,
           STATUS_AGT.WIA,
-          STATUS_AGT.INACTIVE,
-        ],
+          STATUS_AGT.INACTIVE
+        ),
         defaultValue: STATUS_AGT.ACTIVE,
       },
     },

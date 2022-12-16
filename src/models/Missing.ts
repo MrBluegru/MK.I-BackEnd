@@ -44,8 +44,7 @@ export const Missing = (sequelize: Sequelize) =>
         type: DataTypes.STRING,
       },
       sex: {
-        type: DataTypes.ENUM,
-        values: [SEX.FEMALE, SEX.MALE],
+        type: DataTypes.ENUM(SEX.FEMALE, SEX.MALE),
         allowNull: false,
       },
       race: {
@@ -81,8 +80,7 @@ export const Missing = (sequelize: Sequelize) =>
         allowNull: true,
       },
       status: {
-        type: DataTypes.ENUM,
-        values: [STATUS_MSSG.FOUND, STATUS_MSSG.SEARCHING],
+        type: DataTypes.ENUM(STATUS_MSSG.FOUND, STATUS_MSSG.SEARCHING),
       },
     },
     {

@@ -44,8 +44,7 @@ export const Fugitive = (sequelize: Sequelize) =>
         type: DataTypes.STRING,
       },
       sex: {
-        type: DataTypes.ENUM,
-        values: [SEX.FEMALE, SEX.MALE],
+        type: DataTypes.ENUM(SEX.FEMALE, SEX.MALE),
         allowNull: false,
       },
       race: {
@@ -81,8 +80,11 @@ export const Fugitive = (sequelize: Sequelize) =>
         type: DataTypes.STRING,
       },
       status: {
-        type: DataTypes.ENUM,
-        values: [STATUS_FUG.CAUGHT, STATUS_FUG.DEAD, STATUS_FUG.SEARCHING],
+        type: DataTypes.ENUM(
+          STATUS_FUG.CAUGHT,
+          STATUS_FUG.DEAD,
+          STATUS_FUG.SEARCHING
+        ),
       },
     },
     {

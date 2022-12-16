@@ -1,21 +1,17 @@
 import type { Response, Request } from "express";
+import { UserModel } from "../db";
 
-const getUsers = async (req: Request, res: Response) => {
+export const getUsers = async (req: Request, res: Response) => {
   try {
-    res.send("Hi from users");
+    const allUsers = await UserModel.findAll();
+    res.status(200).json({ allUsers });
   } catch (error) {
-    res.send(error);
+    console.log(error);
   }
 };
 
-const postUsers = async (req: Request, res: Response) => {
+export const postUsers = async (req: Request, res: Response) => {
   const { data } = req.body;
   try {
-
-  }
-  catch(error) {
-    
-  }
+  } catch (error) {}
 };
-
-module.exports = { getUsers, postUsers };

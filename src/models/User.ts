@@ -26,18 +26,26 @@ export const User = (sequelize: Sequelize) =>
         type: DataTypes.STRING,
       },
       position: {
-        type: DataTypes.STRING,
-        defaultValue: POSITION.INSPECTOR,
+        type: DataTypes.ENUM(
+          POSITION.CEO,
+          POSITION.INSPECTOR,
+          POSITION.MANAGER
+        ),
         allowNull: false,
       },
       status: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM(
+          STATUS_ACC.ACTIVE,
+          STATUS_ACC.BAN,
+          STATUS_ACC.INACTIVE
+        ),
         defaultValue: STATUS_ACC.ACTIVE,
-        allowNull: false,
+        allowNull: true,
       },
       accountCreation: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         defaultValue: DataTypes.NOW,
+        allowNull: true,
       },
     },
     {
